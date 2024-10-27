@@ -7,7 +7,7 @@
 
 ✨ NoneBot 插件，用于广播消息到多个群组 ✨
 
-[![license](https://img.shields.io/github/license/F1Justin/nonebot-plugin-broadcast.svg)](./LICENSE)
+[![license](https://img.shields.io/github/license/F1Justin/nonebot-plugin-specify-broadcast.svg)](./LICENSE)
 [![pypi](https://img.shields.io/pypi/v/nonebot-plugin-broadcast.svg)](https://pypi.python.org/pypi/nonebot-plugin-broadcast)
 ![python](https://img.shields.io/badge/python-3.9+-blue.svg)
 
