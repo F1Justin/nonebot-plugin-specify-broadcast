@@ -6,17 +6,13 @@ build-backend = "setuptools.build_meta"
 name = "nonebot-plugin-broadcast"
 version = "1.0.0"
 description = "A NoneBot plugin for broadcasting messages to multiple group chats."
-readme = "README.md"
+readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.8"
-license = { text = "MIT" }
+license = { spdx = "MIT" }
 keywords = ["nonebot", "plugin", "broadcast", "group", "bot"]
 authors = [
     { name = "f1justin", email = "f1justin@outlook.com" }
 ]
-homepage = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast"
-repository = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast"
-documentation = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast"
-
 dependencies = [
     "nonebot2>=2.0.0",
     "nonebot-adapter-onebot>=2.0.0", 
@@ -24,12 +20,11 @@ dependencies = [
 ]
 
 [project.urls]
+homepage = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast"
+repository = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast"
+documentation = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast"
 "Bug Tracker" = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast/issues"
 "Source Code" = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast"
-
-[tool.setuptools_scm]
-version_scheme = "guess-next-dev"
-local_scheme = "node-and-timestamp"
 
 [tool.setuptools.packages.find]
 where = ["src"]
