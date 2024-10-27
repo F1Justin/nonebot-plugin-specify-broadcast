@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nonebot-plugin-specify-broadcast"
-version = "1.0.1"
+version = "1.0.2"
 description = "A NoneBot plugin for broadcasting messages to multiple group chats."
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.8"
@@ -17,7 +17,10 @@ dependencies = [
     "nonebot2>=2.0.0",
     "nonebot-adapter-onebot>=2.0.0", 
     "nonebot-plugin-apscheduler>=0.1.0",
+    "pydantic>=2.0.0",
+    "pydantic-settings>=2.0.0",
 ]
+
 
 [project.urls]
 homepage = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast"
