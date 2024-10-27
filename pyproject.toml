@@ -8,7 +8,7 @@ version = "1.0.0"
 description = "A NoneBot plugin for broadcasting messages to multiple group chats."
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.8"
-license = { spdx = "MIT" }
+license = { file = "LICENSE" }
 keywords = ["nonebot", "plugin", "broadcast", "group", "bot"]
 authors = [
     { name = "f1justin", email = "f1justin@outlook.com" }
