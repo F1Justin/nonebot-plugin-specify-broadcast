@@ -1,10 +1,10 @@
 [build-system]
-requires = ["setuptools>=42", "wheel"]
+requires = ["setuptools>=42", "wheel", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "nonebot-plugin-broadcast"
-version = "0.1.0"
+version = { dynamic = ["version"] }
 description = "A NoneBot plugin for broadcasting messages to multiple group chats."
 readme = "README.md"
 requires-python = ">=3.8"
@@ -27,12 +27,12 @@ dependencies = [
 "Bug Tracker" = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast/issues"
 "Source Code" = "https://github.com/F1Justin/nonebot-plugin-specify-broadcast"
 
+[tool.setuptools_scm]
+version_scheme = "guess-next-dev"
+local_scheme = "node-and-timestamp"
+
 [tool.setuptools.packages.find]
 where = ["src"]
 
 [tool.setuptools]
 package-dir = { "" = "src" }
-
-[tool.setuptools_scm]
-version_scheme = "guess-next-dev"
-local_scheme = "node-and-timestamp"
