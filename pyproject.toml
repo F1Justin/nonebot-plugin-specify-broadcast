@@ -3,7 +3,7 @@ requires = ["setuptools>=42", "wheel", "setuptools_scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "nonebot-plugin-broadcast"
+name = "nonebot-plugin-specify-broadcast"
 version = "1.0.0"
 description = "A NoneBot plugin for broadcasting messages to multiple group chats."
 readme = { file = "README.md", content-type = "text/markdown" }
