@@ -17,15 +17,21 @@ __plugin_meta__ = PluginMetadata(
 )
 
 import asyncio
-from nonebot import on_command
+from nonebot import on_command, require
 from nonebot.adapters.onebot.v11 import Bot, Event, Message, GroupMessageEvent, MessageSegment
 from nonebot.permission import SUPERUSER
 from nonebot.params import CommandArg, Arg, ArgPlainText
 from nonebot.typing import T_State
 from nonebot.log import logger
-from nonebot_plugin_apscheduler import scheduler
 from datetime import datetime, timedelta
 from .config import Config
+
+# 使用 require 确保插件先加载
+require("nonebot_plugin_apscheduler")
+
+# 在确保插件加载后再导入 scheduler
+from nonebot_plugin_apscheduler import scheduler
+
 
 # 读取配置的广播群聊
 config = Config()
