@@ -1,15 +1,20 @@
 import os
-from typing import List, Set
-from nonebot import get_driver, logger
+from typing import Set
+from nonebot import get_driver, logger, config as nb_config # 导入 nonebot 的 Config
 
 driver = get_driver()
 config = driver.config
 
-class Config:
+class Config(nb_config.Config):  # 继承自 nonebot.config.Config
     broadcast_groups: Set[int] = set()
 
+
     def __init__(self):
-        broadcast_groups_str = os.environ.get("BROADCAST_GROUPS") or str(getattr(config, "broadcast_groups", "")) # 兼容.env文件和config设置
+         # 需要调用父类构造函数
+        super().__init__()
+
+
+        broadcast_groups_str = os.environ.get("BROADCAST_GROUPS") or str(getattr(config, "broadcast_groups", ""))
 
         if broadcast_groups_str:
             try:
