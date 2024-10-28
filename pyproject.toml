@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "nonebot-plugin-specify-broadcast"
-version = "1.0.5"
+version = "1.0.6"
 description = "A NoneBot plugin for broadcasting messages to multiple group chats."
 readme = { file = "README.md", content-type = "text/markdown" }
 requires-python = ">=3.8"
