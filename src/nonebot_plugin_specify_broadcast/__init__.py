@@ -6,23 +6,20 @@ __plugin_meta__ = PluginMetadata(
     description="允许超级用户向多个群聊广播消息，支持文字、图片和@。",
     usage="""
     指令：
-    1. 广播：发送广播消息到多个群聊。
-    示例：
-    **广播** <消息内容>
+    广播 <消息内容>
     """,
     type="application",
-    homepage="https://github.com/F1Justin/nonebot-plugin-specify-broadcast",  # 请将此替换为实际的项目主页链接
+    homepage="https://github.com/F1Justin/nonebot-plugin-specify-broadcast",
     config=Config,
     supported_adapters={"~onebot.v11"},
 )
 
 import asyncio
-from nonebot import on_command, require
+from nonebot import on_command, require, logger
 from nonebot.adapters.onebot.v11 import Bot, Event, Message, GroupMessageEvent, MessageSegment
 from nonebot.permission import SUPERUSER
 from nonebot.params import CommandArg, Arg, ArgPlainText
 from nonebot.typing import T_State
-from nonebot.log import logger
 from datetime import datetime, timedelta
 from .config import Config
 
@@ -32,12 +29,11 @@ require("nonebot_plugin_apscheduler")
 # 在确保插件加载后再导入 scheduler
 from nonebot_plugin_apscheduler import scheduler
 
-
-# 读取配置的广播群聊
+# 获取配置实例
 config = Config()
 
 # 定义广播指令，只有超级用户（管理员）可以使用
-broadcast = on_command("**广播**", permission=SUPERUSER, priority=5, block=True)
+broadcast = on_command("广播", permission=SUPERUSER, priority=5, block=True)
 
 # 定义广播的状态
 @broadcast.handle()
@@ -120,7 +116,7 @@ async def handle_confirm(bot: Bot, event: Event, state: T_State, confirm: str = 
                 return f"群 {group_id}: 发送失败（{str(e)}）"
 
     # 并发发送消息
-    tasks = [send_message(group_id) for group_id in config.parsed_broadcast_groups]
+    tasks = [send_message(group_id) for group_id in config.broadcast_groups]
     results = await asyncio.gather(*tasks)
 
     # 将成功和失败的结果分开
